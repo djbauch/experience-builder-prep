@@ -1,5 +1,7 @@
 run = "yarn start"
 hidden = [".build", ".config"]
+entrypoint = "index.ts"
+compile = "./.config/build.sh"
 
 [packager]
 language = "nodejs"
