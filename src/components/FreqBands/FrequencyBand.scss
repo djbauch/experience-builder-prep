@@ -3,6 +3,23 @@
   overflow: auto;
 }
 
+.band-header {
+  display: flex;
+  min-width: 10em;
+  margin-top: 4px;
+  padding: 0 20px;
+  position: absolute; 
+  background-color: chocolate;
+}
+
+.freq-zoom-controls {
+  top: 0;
+  z-index: 5;
+  position: absolute;
+  background-color: bisque;
+  visibility: hidden;
+}
+
 .tip{
 
   padding: 2px;
@@ -12,3 +29,4 @@
     margin-right: 4px;
   }
 }
+

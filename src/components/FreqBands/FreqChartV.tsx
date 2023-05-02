@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as d3 from 'd3'
 import { Button } from 'react-bootstrap'
 import './FrequencyBand.scss'
@@ -24,6 +24,7 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
   const handleMinus = () => {
     setZoom(Math.max(zoom - 10, 10))
   }
+
 
   const ref = useD3(
     (svg) => {
@@ -186,9 +187,9 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
             .style('background-color', colorForService(d.dt.Radio_Service))
             .style('color', textColorForService(d.dt.Radio_Service))
             .html(
-              `<div class="tip"><p>Radio Service: ${d.dt.Radio_Service}</p><p>Station Class Code: ${
+              `<div class="tip"><p>${d.dt.Radio_Service}</p><p>Class Code: ${
                 d.dt.Stn_Class_Code
-              }</p><p>Station Class: ${d.dt.Station_Class}</p><p>Low: ${ConvFreq(d.dt.LowFreq)}</p><p>High: ${ConvFreq(
+              }</p><p>Class: ${d.dt.Station_Class}</p><p>${ConvFreq(d.dt.LowFreq, false)} to ${ConvFreq(
                 d.dt.HighFreq
               )}</p><p>${d.dt.Primary_Secondary}</p></div>`
             )
@@ -197,7 +198,11 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
             .style('opacity', 1)
         })
         .on('mousemove', (e) => {
-          toolTip.transition().duration(100).style('top', e.pageY + 'px').style('left', e.pageX + 'px')
+          toolTip
+            .transition()
+            .duration(100)
+            .style('top', e.pageY + 'px')
+            .style('left', e.pageX + 'px')
         })
         .on('mouseout', (e) => {
           return toolTip.transition().duration(800).style('opacity', 0)
@@ -205,19 +210,31 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
     },
     [data.length]
   )
+
+  const [showControls, setShowControls] = useState(true)
+  const handleMouseIn  = () =>{
+    setShowControls(true)
+  }
+  const Controls = () => {
+    return (
+    <div className="freq-zoom-controls">
+     <Button size="sm" onClick={handleMinus}>
+      -
+    </Button>{' '}
+    Zoom: {zoom}%{' '}
+    <Button size="sm" onClick={handlePlus}>
+      +
+    </Button>{' '}
+    </div>
+    )
+  }
   return (
     <div className="BandContainer" id={`BandContainer${band}`}>
       {showBandHeader ? (
-        <h2>
-          <Button size="sm" onClick={handleMinus}>
-            -
-          </Button>{' '}
-          Zoom: {zoom}%{' '}
-          <Button size="sm" onClick={handlePlus}>
-            +
-          </Button>{' '}
+        <h4 className="band-header" onMouseEnter={handleMouseIn}>
           {ConvFreq(min)} - {ConvFreq(max)}
-        </h2>
+        {showControls ? <Controls /> : <div/>}
+        </h4>
       ) : null}
       <div className="FrequencyBand" id={`FrequencyBand${band}`} onKeyUp={handleKeyUp}>
         <svg

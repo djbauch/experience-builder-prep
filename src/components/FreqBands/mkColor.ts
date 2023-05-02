@@ -14,13 +14,18 @@ export const textColorForService = (serviceName: string) => {
   switch (serviceName) {
     case 'Aeronautical Mobile':
     case 'Aeronautical Mobile-Satellite':
-      case 'Radiolocation':
+    case 'Radiolocation':
+    case 'Fixed-Satellite':
+    case 'Mobile-Satellite':
+    case 'Maritime Mobile':
+    case 'Meteorological Aids':
       return '#000'
     case 'Land Mobile':
+    case 'Aeronautical Radionavigation':
       return '#fff'
 
     default:
-      return 2
+      return '#111'
   }
 }
 export const colorForService = (serviceName: string) => {
