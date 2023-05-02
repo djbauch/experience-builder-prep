@@ -1,7 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 //import { withRouter } from 'storybook-addon-react-router-v6'
-import esriConfig from '@arcgis/core/config'
 
 // Import custom CSS
 import '../src/scss/styles.scss'
@@ -16,8 +15,6 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 import 'react-toastify/dist/ReactToastify.css'
-
-esriConfig.assetsPath = '../src/assets'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
