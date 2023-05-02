@@ -20,6 +20,16 @@ const FreqChart30M = () => <FreqChart data={FA.Band30M} min={3E7} max={3E8} band
 const FreqChart300M = () => <FreqChart data={FA.Band300M} min={3E8} max={3E9} band={4}/>
 const FreqChart3G = () => <FreqChart data={FA.Band3G} min={3E9} max={3E10} band={5}/>
 const FreqChart30G = () => <FreqChart data={FA.Band30G} min={3E10} max={3E11} band={6}/>
+const AllCharts = () => (
+  <>
+  <FreqChart300k />
+  <FreqChart3M />
+  <FreqChart30M />
+  <FreqChart300M />
+  <FreqChart3G />
+  <FreqChart30G />
+  </>
+)
 export const App = () => {
   return (
     <div className="App">
@@ -31,6 +41,7 @@ export const App = () => {
           <Route path="fc300M" element={<FreqChart300M />} />
           <Route path="fc3G" element={<FreqChart3G />} />
           <Route path="fc30G" element={<FreqChart30G />} />
+          <Route path="allCharts" element={<AllCharts />} />
           <Route path="coordconvert" element={<CoordConvert />} />
           {/* }
         <Route path="distances" element={<Distances />} />

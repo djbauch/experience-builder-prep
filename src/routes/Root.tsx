@@ -34,9 +34,13 @@ export default function Root() {
               <NavLink className="navLink" to={`fc3G`} onClick={handleClose}>
                 3GHz Freq Chart
               </NavLink>
-                    <NavLink className="navLink" to={`fc30G`} onClick={handleClose}>
+              <NavLink className="navLink" to={`fc30G`} onClick={handleClose}>
                 30GHz Freq Chart
-              </NavLink><NavLink className="navLink" to={`rcssuper`} onClick={handleClose}>
+              </NavLink>
+              <NavLink className="navLink" to={'allCharts'} onClick={handleClose}>
+                All Frequency Charts
+              </NavLink>
+              <NavLink className="navLink" to={`rcssuper`} onClick={handleClose}>
                 RCS Pattern Viewer
               </NavLink>
 
@@ -80,7 +84,7 @@ export default function Root() {
         </Offcanvas>
       </div>
       <div id="detail" className="widget-display">
-      <Outlet />
+        <Outlet />
       </div>
     </>
   )
