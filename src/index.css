@@ -1,0 +1,239 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.parallax-bg {
+  height: 100%;
+  width: 100%;
+  background-image: url('./images/parallax_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.App {
+  width: 100%;
+}
+/* Start index.js and other pages*/
+#sidebar {
+  position: fixed;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 16px;
+  background-color: darkblue;
+  border-radius: 8px;
+  padding: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+a.active {
+  background-color: rgb(130, 130, 241);
+  color: black;
+  font-weight: 500;
+}
+.navLink:hover {
+  background-color: rgb(207, 201, 201);
+  border-radius: 8px;
+  padding: 10px;
+  color: black;
+}
+#menu_button {
+  margin-left: 40px;
+  position: relative;
+  top: -20px;
+}
+
+.widget-display {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 28px;
+  padding-left: 28px;
+  padding-bottom: 14px;
+  background-color: white;
+  border-color: aliceblue;
+  border-width: 2px;
+  border-radius: 8px;
+  position: relative;
+  top: 40px;
+  height: 100%;
+
+}
+.widget_choice {
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  position: relative;
+  background-color: #f5f5dc;
+  border-radius: 25px;
+}
+
+.widget_choice select {
+  font-size: 18px;
+  margin: auto;
+}
+
+.widget_choice2 {
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 95%;
+  position: relative;
+  background-color: #f5f5dc;
+  border-radius: 25px;
+  width: 1200px;
+}
+
+.widget_choice2 select {
+  font-size: 18px;
+  margin: auto;
+}
+
+.widget_choice2 h4 {
+  text-align: center;
+}
+
+h4 {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+h3 {
+  color: white;
+  font-weight: bold;
+}
+
+.page {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 1100px;
+}
+
+.page form {
+  background-color: #f5f5dc;
+  border-radius: 25px;
+  padding: 20px;
+  width: 800px;
+  margin: auto;
+}
+
+.linkspageleft {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  display: block;
+  text-align: left;
+  padding: 30px;
+  width: 60%;
+  margin: auto;
+}
+
+.linkspageleft label {
+  padding-left: 130px;
+}
+
+.linkspageright {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  display: block;
+  text-align: right;
+  padding: 30px;
+  width: 40%;
+  margin: auto;
+}
+
+.linkspageleft2 {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  display: block;
+  text-align: left;
+  padding-left: 5px;
+  padding-top: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+.StyleInput {
+  size: 30px;
+}
+
+.range datalist {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  writing-mode: vertical-lr;
+  width: 200px;
+  padding-left: 430px;
+}
+
+.range option {
+  padding: 0px;
+}
+
+.range input[type='range'] {
+  width: 200px;
+  margin: 0;
+  size: 30px;
+}
+
+.error {
+  font-weight: bold;
+  color: maroon;
+}
+
+.linkto_rct {
+  text-decoration: none;
+}
+
+.linkto_rct:hover {
+  background-color: rgb(207, 201, 201);
+  border-radius: 8px;
+}
+
+.main_menu {
+  min-width: 240px;
+  position: relative;
+  display: inline-block;
+}
+
+.rthome_menu {
+  min-width: 240px;
+  position: relative;
+  display: inline-block;
+}
+
+.rt_home {
+  text-decoration: none;
+}
+
+.rt_home:hover {
+  background-color: rgb(207, 201, 201);
+  border-radius: 8px;
+  min-width: 100px;
+}
+
+.action_home {
+  margin: auto;
+  text-align: center;
+}

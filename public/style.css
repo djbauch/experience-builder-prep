@@ -1,0 +1,199 @@
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:990px;
+}
+
+body {
+	background-color: #F7EFC3
+}
+
+table, th,td {
+  border: 1px solid black;
+  border:collapse;
+}
+
+index_table {
+  text-align: center;
+  margin: 20px;
+  margin: 0 auto;
+}
+
+
+ 
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.layout {  
+
+	padding-left : 50px;
+	display : grid;  
+	grid-template-columns : 30% 30% 20% 20%;
+	grid-template-rows : 70%
+}
+.HomeButtons {
+	padding-top: 70px;
+	padding-left: 25%;
+  }
+
+.CreateForm {
+padding-top: 70px;
+padding-left: 35%;
+  } 
+  
+.projectListForm {
+padding-top: 60px;
+padding-left: 40%;
+	} 
+
+.surebuttons {
+	padding-top: 70px;
+	padding-left: 35%;
+		} 
+		
+h2 {
+	font-weight: 400;
+	font-size: 16px;
+	text-decoration: underline;
+	}
+
+h4 {
+	font-weight: 600;
+	font-size: 14px;
+	text-decoration: underline;
+	}
+
+#project {
+	top:10px;
+	max-width: 95%;
+
+
+}	
+.headproject {
+	width: 60%;
+	position:absolute;
+ }
+
+
+.projectdata {
+	width: 100%;
+	padding: 10px;
+	top:200x;
+	padding-top: 200px;
+    position:relative;
+}
+
+#list1 {
+	float: left;
+	width: 100%;
+	padding: 10px;
+	top: 200px;
+	position:relative;	
+}
+
+#list2 {
+	float: left;
+	width: 100%;
+	padding: 10px;
+	top:200px;
+	position:relative;
+}
+
+#list3 {
+	float: left;
+	width: 100%;
+	padding: 10px;
+	top: 200px;
+	position:relative;
+}
+
+
+.headequip {
+	width: 60%;
+	position:absolute;
+
+}
+
+.equip_data {
+	width: 100%;
+	padding: 10px;
+	top:200x;
+	padding-top: 200px;
+    position:relative;
+}
+
+.StyleInput {
+	padding: 4px;
+	border: 1px solid rgb(5, 5, 53);
+	border-radius: 2px;	
+	margin-bottom:10px;
+	margin-top:5px;
+}
+
+.StyleLabel {
+	padding-right: 10px;
+	font-weight: 600;
+	font-size: 15px;
+	display: inline-block;
+	width:160px;
+}
+
+.PositionData {
+
+	border: 1px solid rgb(91, 91, 100);
+	border-radius: 2em;
+ 	width:350px;
+	 padding:5px;
+}
+
+#query {
+   position:relative;
+   left:20px;
+   margin:auto;
+}
+
+.search {
+	border: 1px solid rgb(91, 91, 100);
+	border-radius: 2em;
+	width: 560px;
+	padding:5px;
+}
+ 
+.queryform {
+	padding-left: 40px;
+	width:100%;
+}
+
+.functionList{
+	align-items: center;
+}
+
+div.tooltip {	
+            position: absolute;			
+            text-align: center;			
+            width: 60px;					
+            height: 28px;					
+            padding: 2px;				
+            font: 12px sans-serif;		
+            background: lightsteelblue;	
+            border: 0px;		
+            border-radius: 8px;			
+            pointer-events: none;			
+        }
+
+
+  
+
+
+
