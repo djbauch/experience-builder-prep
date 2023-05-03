@@ -6,7 +6,6 @@ import { useD3 } from 'hooks/useDthree'
 import { buildData } from './mkBands2'
 import { colorForService, textColorForService } from './mkColor'
 import { ConvFreq } from './cnvFreq'
-import { FaPlusSquare, FaMinusSquare, FaPlus } from 'react-icons/fa'
 
 export default function FreqChartV({ data, min, max, band, redVerticals = false, showBandHeader = true }) {
   const [zoom, setZoom] = React.useState(100)
@@ -228,11 +227,11 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
           {showControls ? (
             <div className="freq-zoom-controls" onMouseLeave={handleMouseLeave}>
               <Button size="sm" onClick={handleMinus}>
-                <FaMinusSquare />{' '}
+                <b>-{' '}</b>
               </Button>{' '}
               Zoom: {zoom}%{' '}
               <Button size="sm" onClick={handlePlus}>
-                <FaPlusSquare />
+                <b>+{' '}</b>
               </Button>{' '}
             </div>
           ) : (
