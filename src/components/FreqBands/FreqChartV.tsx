@@ -6,6 +6,7 @@ import { useD3 } from 'hooks/useDthree'
 import { buildData } from './mkBands2'
 import { colorForService, textColorForService } from './mkColor'
 import { ConvFreq } from './cnvFreq'
+import { FaPlusSquare, FaMinusSquare, FaPlus } from 'react-icons/fa'
 
 export default function FreqChartV({ data, min, max, band, redVerticals = false, showBandHeader = true }) {
   const [zoom, setZoom] = React.useState(100)
@@ -24,7 +25,6 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
   const handleMinus = () => {
     setZoom(Math.max(zoom - 10, 10))
   }
-
 
   const ref = useD3(
     (svg) => {
@@ -111,6 +111,7 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
         .attr('x2', (d) => Scale(d.hi))
         .attr('y1', 55)
         .attr('y2', 250)
+
       if (redVerticals) {
         fkLines
           .append('line')
@@ -187,11 +188,11 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
             .style('background-color', colorForService(d.dt.Radio_Service))
             .style('color', textColorForService(d.dt.Radio_Service))
             .html(
-              `<div class="tip"><p>${d.dt.Radio_Service}</p><p>Class Code: ${
-                d.dt.Stn_Class_Code
-              }</p><p>Class: ${d.dt.Station_Class}</p><p>${ConvFreq(d.dt.LowFreq, false)} to ${ConvFreq(
-                d.dt.HighFreq
-              )}</p><p>${d.dt.Primary_Secondary}</p></div>`
+              `<div class="tip"><p>${d.dt.Radio_Service}</p><p>Class Code: ${d.dt.Stn_Class_Code}</p><p>Class: ${
+                d.dt.Station_Class
+              }</p><p>${ConvFreq(d.dt.LowFreq, false)} to ${ConvFreq(d.dt.HighFreq)}</p><p>${
+                d.dt.Primary_Secondary
+              }</p></div>`
             )
             .style('top', e.pageY + 'px')
             .style('left', e.pageX + 'px')
@@ -211,29 +212,32 @@ export default function FreqChartV({ data, min, max, band, redVerticals = false,
     [data.length]
   )
 
-  const [showControls, setShowControls] = useState(true)
-  const handleMouseIn  = () =>{
+  const [showControls, setShowControls] = useState(false)
+  const handleMouseIn = () => {
     setShowControls(true)
   }
-  const Controls = () => {
-    return (
-    <div className="freq-zoom-controls">
-     <Button size="sm" onClick={handleMinus}>
-      -
-    </Button>{' '}
-    Zoom: {zoom}%{' '}
-    <Button size="sm" onClick={handlePlus}>
-      +
-    </Button>{' '}
-    </div>
-    )
+  const handleMouseLeave = () => {
+    setShowControls(false)
   }
+
   return (
     <div className="BandContainer" id={`BandContainer${band}`}>
       {showBandHeader ? (
         <h4 className="band-header" onMouseEnter={handleMouseIn}>
           {ConvFreq(min)} - {ConvFreq(max)}
-        {showControls ? <Controls /> : <div/>}
+          {showControls ? (
+            <div className="freq-zoom-controls" onMouseLeave={handleMouseLeave}>
+              <Button size="sm" onClick={handleMinus}>
+                <FaMinusSquare />{' '}
+              </Button>{' '}
+              Zoom: {zoom}%{' '}
+              <Button size="sm" onClick={handlePlus}>
+                <FaPlusSquare />
+              </Button>{' '}
+            </div>
+          ) : (
+            <div />
+          )}
         </h4>
       ) : null}
       <div className="FrequencyBand" id={`FrequencyBand${band}`} onKeyUp={handleKeyUp}>
