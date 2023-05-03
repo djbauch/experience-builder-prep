@@ -22,6 +22,8 @@ export const textColorForService = (serviceName: string) => {
       return '#000'
     case 'Land Mobile':
     case 'Aeronautical Radionavigation':
+    case 'Fixed':
+      case 'Meteorological-Satellite':
       return '#fff'
 
     default:
