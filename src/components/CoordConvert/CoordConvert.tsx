@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import DMSDisplay from './DMSDisplay'
-import { Button,  Stack } from 'react-bootstrap'
+import { Button, Stack } from 'react-bootstrap'
 import 'index.css'
 import './CoordConvert.scss'
 import { toast } from 'react-toastify'
@@ -47,55 +47,50 @@ export default function CoordConvert() {
   return (
     <div className={'widget_choice CoordConvert'}>
       <h4>Convert from Decimal to Degress Minutes Seconds</h4>
-      <Stack direction="vertical">
-      <Stack direction="horizontal" className="horizontal-stack">
-        <div>
-          <label  htmlFor="latitude-text">
-            Latitude
-          </label>
+      <div className="vertical-stack">
+        <div className="horizontal-stack">
+          <div>
+            <label htmlFor="latitude-text">Latitude</label>
+          </div>
+          <div>
+            <input
+              type="text"
+              name="lat"
+              id="latitude-text"
+              defaultValue="29.5"
+              value={lat}
+              onChange={handleChangeLat}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="longitude-text">Longitude</label>
+          </div>
+          <div>
+            <input
+              type="text"
+              name="lon"
+              id="longitude-text"
+              defaultValue="-98.5"
+              value={lon}
+              onChange={handleChangeLon}
+            />
+          </div>
         </div>
-        <div>
-          <input
-            type="text"
-            name="lat"
-            id="latitude-text"
-            defaultValue="29.5"
-            value={lat}
-            onChange={handleChangeLat}
-          />
+        <div className="button-row">
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => {
+              submit(lat, lon)
+            }}
+          >
+            Convert
+          </Button>
         </div>
 
-        <div>
-          <label  htmlFor="longitude-text">
-            Longitude
-          </label>
-        </div>
-        <div>
-          <input
-            type="text"
-            name="lon"
-            id="longitude-text"
-            defaultValue="-98.5"
-            value={lon}
-            onChange={handleChangeLon}
-          />
-        </div>
-      </Stack>
-      <div className="button-row">
-      <Button
-        variant="primary"
-        size="lg"
-        onClick={() => {
-          submit(lat, lon)
-        }}
-      >
-        Convert
-      </Button>
+        <DMSDisplay lat={result.latitude} lon={result.longitude} />
       </div>
-
-      <DMSDisplay lat={result.latitude} lon={result.longitude} />
-
-      </Stack>
     </div>
   )
 }
